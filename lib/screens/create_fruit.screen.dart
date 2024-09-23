@@ -22,6 +22,15 @@ class _CreateFruitScreenState extends State<CreateFruitScreen> {
     super.initState();
   }
 
+  _onPressed() {
+    widget.onPress(Fruit(
+      name: _nameController.text,
+      price: _priceController.text,
+    ));
+
+    closeRoute(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,21 +44,13 @@ class _CreateFruitScreenState extends State<CreateFruitScreen> {
               decoration: inputDecoration(label: "Informe o nome"),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: TextFormField(
                 controller: _priceController,
                 decoration: inputDecoration(label: "Informe o valor"),
               ),
             ),
-            ElevatedButton(
-                onPressed: () {
-                  final fruit = Fruit(
-                    name: _nameController.text,
-                    price: _priceController.text,
-                  );
-                  widget.onPress(fruit);
-                },
-                child: const Text("Salvar"))
+            ElevatedButton(onPressed: _onPressed, child: const Text("Salvar"))
           ],
         ),
       ),
