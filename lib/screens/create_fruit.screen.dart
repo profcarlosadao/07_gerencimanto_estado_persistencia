@@ -35,7 +35,7 @@ class _CreateFruitScreenState extends State<CreateFruitScreen> {
               decoration: inputDecoration(label: "Informe o nome"),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: TextFormField(
                 controller: _priceController,
                 decoration: inputDecoration(label: "Informe o valor"),
