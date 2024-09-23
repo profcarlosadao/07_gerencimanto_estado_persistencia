@@ -1,3 +1,4 @@
+import 'package:aula07_gerenciamento_de_estado_persistencia/screens/widget/content_change_notify.dart';
 import 'package:flutter/material.dart';
 import 'controller/fruit_change_notify.controller.dart';
 import 'create_fruit.screen.dart';
@@ -23,21 +24,7 @@ class _ListFruitState extends State<ListFruit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Lista de Frutas")),
-      body: ListenableBuilder(
-        listenable: _fruitChangeNotifyController,
-        builder: (BuildContext context, Widget? child) {
-          return ListView.builder(
-            itemCount: _fruitChangeNotifyController.fruits.length,
-            itemBuilder: (BuildContext context, int index) {
-              final fruit = _fruitChangeNotifyController.fruits[index];
-              return ListTile(
-                title: Text(fruit.name),
-                subtitle: Text(fruit.price),
-              );
-            },
-          );
-        },
-      ),
+      body: ContentChangeNotify(controller: _fruitChangeNotifyController),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           openRoute(
