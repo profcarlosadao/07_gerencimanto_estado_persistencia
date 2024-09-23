@@ -1,7 +1,8 @@
-import 'package:aula07_gerenciamento_de_estado_persistencia/screens/widget/content_change_notify.dart';
+
 import 'package:flutter/material.dart';
 import 'controller/fruit_change_notify.controller.dart';
 import 'create_fruit.screen.dart';
+import 'widget/content_change_notify.dart';
 import '../snippets.dart';
 
 class ListFruit extends StatefulWidget {
