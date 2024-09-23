@@ -1,5 +1,6 @@
-import 'package:aula07_gerenciamento_de_estado_persistencia/screens/controller/fruit_change_notify.controller.dart';
 import 'package:flutter/material.dart';
+
+import '../controller/fruit_change_notify.controller.dart';
 
 class ContentChangeNotify extends StatelessWidget {
   final FruitChangeNotifyController controller;

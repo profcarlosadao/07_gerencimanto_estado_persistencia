@@ -1,8 +1,8 @@
-import 'package:aula07_gerenciamento_de_estado_persistencia/screens/widget/content_change_notify.dart';
 import 'package:flutter/material.dart';
-import 'controller/fruit_change_notify.controller.dart';
+import 'controller/fruit_get.controller.dart';
 import 'create_fruit.screen.dart';
 import '../snippets.dart';
+import 'widget/content_get.widget.dart';
 
 class ListFruit extends StatefulWidget {
   const ListFruit({super.key});
@@ -12,11 +12,11 @@ class ListFruit extends StatefulWidget {
 }
 
 class _ListFruitState extends State<ListFruit> {
-  late FruitChangeNotifyController _fruitChangeNotifyController;
+  late FruitGetController _getController;
 
   @override
   void initState() {
-    _fruitChangeNotifyController = FruitChangeNotifyController();
+    _getController = FruitGetController();
     super.initState();
   }
 
@@ -24,14 +24,14 @@ class _ListFruitState extends State<ListFruit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Lista de Frutas")),
-      body: ContentChangeNotify(controller: _fruitChangeNotifyController),
+      body: ContentGetWidget(controller: _getController),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           openRoute(
             context,
             CreateFruitScreen(
               onPress: (fruit) {
-                _fruitChangeNotifyController.addFruit(fruit);
+                _getController.addFruit(fruit);
               },
             ),
           );
